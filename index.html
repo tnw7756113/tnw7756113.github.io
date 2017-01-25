@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>index.html</title>
-        <meta charset="Big5">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -13,7 +13,7 @@
     <body>
         <script type="text/javascript">
             var name="";
-            $(document).on("pageinit","#home",function(){   //Hone­¶­±
+            $(document).on("pageinit","#home",function(){   //Honeé é¢
                 $('#GoStore').click(function(){
                     name=$('#user_name').val();
                     $('#p_name').text(name);
@@ -22,10 +22,10 @@
             });
             var Bike=[];
             var Quantity=[];
-            $(document).on("pageinit","#store",function(){  //store­¶­±
-                //ÂI¿ï¥[¤J²M³æ«ö¶s¨Æ¥ó 
+            $(document).on("pageinit","#store",function(){  //storeé é¢
+                //é»é¸åŠ å…¥æ¸…å–®æŒ‰éˆ•äº‹ä»¶ 
                 $('#add_list01').click(function(){
-                    if($('#quantity01').val()){         //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                    if($('#quantity01').val()){         //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                         Bike.push($('#bike01').html());
                         Quantity.push($('#quantity01').val());                          
                         $('#quantity01').val('');
@@ -35,7 +35,7 @@
                         $('#popupAddFall').popup('open');
                     }
                 });
-                $('#add_list02').click(function(){      //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                $('#add_list02').click(function(){      //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                     if($('#quantity02').val()){
                         Bike.push($('#bike02').html());
                         Quantity.push($('#quantity02').val());
@@ -46,7 +46,7 @@
                         $('#popupAddFall').popup('open');
                     }
                 });
-                $('#add_list03').click(function(){      //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                $('#add_list03').click(function(){      //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                     if($('#quantity03').val()){
                         Bike.push($('#bike03').html());
                         Quantity.push($('#quantity03').val());
@@ -57,7 +57,7 @@
                         $('#popupAddFall').popup('open');
                     }
                 });
-                $('#add_list04').click(function(){      //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                $('#add_list04').click(function(){      //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                     if($('#quantity04').val()){
                         Bike.push($('#bike04').html());
                         Quantity.push($('#quantity04').val());
@@ -68,7 +68,7 @@
                         $('#popupAddFall').popup('open');
                     }
                 });
-                $('#add_list05').click(function(){      //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                $('#add_list05').click(function(){      //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                     if($('#quantity05').val()){
                         Bike.push($('#bike05').html());
                         Quantity.push($('#quantity05').val());
@@ -79,7 +79,7 @@
                         $('#popupAddFall').popup('open');
                     }
                 });
-                $('#add_list06').click(function(){      //ÀË¬d¸ÓTEXT¿é¤J­È¬O§_ªÅ¥Õ
+                $('#add_list06').click(function(){      //æª¢æŸ¥è©²TEXTè¼¸å…¥å€¼æ˜¯å¦ç©ºç™½
                     if($('#quantity06').val()){
                         Bike.push($('#bike06').html());
                         Quantity.push($('#quantity06').val());
@@ -91,40 +91,40 @@
                     }
                 });
                 
-                //ÂI¿ï¯²­É¸ê°T«ö¶s¨Æ¥ó
+                //é»é¸ç§Ÿå€Ÿè³‡è¨ŠæŒ‰éˆ•äº‹ä»¶
                 $('#picture01').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike01').html("Ãş«¬¡G"+date[0].bike+"<br>¾A¦X¨­°ª¡G"+date[0].hight+"<br>¯²­É»ù®æ¡G"+date[0].price+"<br>");
+                        $('#popupbike01').html("é¡å‹ï¼š"+date[0].bike+"<br>é©åˆèº«é«˜ï¼š"+date[0].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[0].price+"<br>");
                     });
                     $('#popupPicture01').popup('open');
                 });
                 $('#picture02').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike02').html("Ãş«¬¡G"+date[1].bike+"<br>¾A¦X¨­°ª¡G"+date[1].hight+"<br>¯²­É»ù®æ¡G"+date[1].price+"<br>");
+                        $('#popupbike02').html("é¡å‹ï¼š"+date[1].bike+"<br>é©åˆèº«é«˜ï¼š"+date[1].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[1].price+"<br>");
                     });
                     $('#popupPicture02').popup('open');
                 });
                 $('#picture03').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike03').html("Ãş«¬¡G"+date[2].bike+"<br>¾A¦X¨­°ª¡G"+date[2].hight+"<br>¯²­É»ù®æ¡G"+date[2].price+"<br>");
+                        $('#popupbike03').html("é¡å‹ï¼š"+date[2].bike+"<br>é©åˆèº«é«˜ï¼š"+date[2].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[2].price+"<br>");
                     });
                     $('#popupPicture03').popup('open');
                 });
                 $('#picture04').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike04').html("Ãş«¬¡G"+date[3].bike+"<br>¾A¦X¨­°ª¡G"+date[3].hight+"<br>¯²­É»ù®æ¡G"+date[3].price+"<br>");
+                        $('#popupbike04').html("é¡å‹ï¼š"+date[3].bike+"<br>é©åˆèº«é«˜ï¼š"+date[3].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[3].price+"<br>");
                     });
                     $('#popupPicture04').popup('open');
                 });
                 $('#picture05').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike05').html("Ãş«¬¡G"+date[4].bike+"<br>¾A¦X¨­°ª¡G"+date[4].hight+"<br>¯²­É»ù®æ¡G"+date[4].price+"<br>");
+                        $('#popupbike05').html("é¡å‹ï¼š"+date[4].bike+"<br>é©åˆèº«é«˜ï¼š"+date[4].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[4].price+"<br>");
                     });
                     $('#popupPicture05').popup('open');
                 });
                 $('#picture06').click(function(){
                     $.getJSON("newjson.json",function(date){
-                        $('#popupbike06').html("Ãş«¬¡G"+date[5].bike+"<br>¾A¦X¨­°ª¡G"+date[5].hight+"<br>¯²­É»ù®æ¡G"+date[5].price+"<br>");
+                        $('#popupbike06').html("é¡å‹ï¼š"+date[5].bike+"<br>é©åˆèº«é«˜ï¼š"+date[5].hight+"<br>ç§Ÿå€Ÿåƒ¹æ ¼ï¼š"+date[5].price+"<br>");
                     });
                     $('#popupPicture06').popup('open');
                 });
@@ -132,7 +132,7 @@
                     $.mobile.changePage('#PayPage');
                 });
             });
-            $(document).on("pageinit","#PayPage",function(){        //PayPage­¶­±
+            $(document).on("pageinit","#PayPage",function(){        //PayPageé é¢
                 for(var i=0;i<Bike.length;i++){
                     $('#order_bike').append(Bike[i]+"</br>");
                 }
@@ -148,27 +148,27 @@
                 });              
             });
         </script>
-    //­º­¶
+    //é¦–é 
     <div id="home" data-role="page">
       <div data-role="header" data-position="fixed" data-theme="b">
-        <h3>¦Û¦æ¨®¥X¯²</h3>
+        <h3>è‡ªè¡Œè»Šå‡ºç§Ÿ</h3>
         <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
       </div>
       <div id="left-menu" data-role="panel" data-position="left" data-theme="b">
-        <a class="ui-btn" data-theme="b" href="#store">¥X¯²°Ó©±</a>
-        <a class="ui-btn" data-theme="b">Ãö©ó§Ú­Ì</a>
+        <a class="ui-btn" data-theme="b" href="#store">å‡ºç§Ÿå•†åº—</a>
+        <a class="ui-btn" data-theme="b">é—œæ–¼æˆ‘å€‘</a>
       </div>
         <div data-role="main" class="ui-content">
             <div style="margin:-16px;">
                 <img src="bike_thema.jpg" style="width:100%">
             </div>
-            <p>©m¦W¡G</p>
+            <p>å§“åï¼š</p>
             <input type="text" data-mini="true" id="user_name">
-            <p>³sµ¸¹q¸Ü¡G</p>
+            <p>é€£çµ¡é›»è©±ï¼š</p>
             <input type="text" data-mini="true" id="user_celephone">
             <table align="center">
                 <tr>
-                    <th><a data-role="button" data-mini="true" id="GoStore" class="ui-btn" style="width:60px; font-size:13px ">¶}©l¿ï¾Ü</a></th>
+                    <th><a data-role="button" data-mini="true" id="GoStore" class="ui-btn" style="width:60px; font-size:13px ">é–‹å§‹é¸æ“‡</a></th>
                 </tr>
             </table>
         </div>
@@ -177,10 +177,10 @@
       </div>
     </div>
 
-    //¯²¨®°Ó©±­¶­±
+    //ç§Ÿè»Šå•†åº—é é¢
     <div id="store" data-role="page" style="background-color: #FFFACD">
       <div data-role="header" data-position="fixed" data-theme="b">
-        <h3>¦Û¦æ¨®´Ú¦¡</h3>
+        <h3>è‡ªè¡Œè»Šæ¬¾å¼</h3>
       </div>
       <div data-role="main" class="ui-content">
           <div style="margin:-16px;">
@@ -188,122 +188,122 @@
           </div>
           <table align="center" border="1">
               <tr align="center">
-                  <th>½s¸¹</th>
-                  <th>¦WºÙ</th>
-                  <th>¦Û¦æ¨®¸ê°T</th>
-                  <th width="80px">¥X­É¼Æ¶q</th>
+                  <th>ç·¨è™Ÿ</th>
+                  <th>åç¨±</th>
+                  <th>è‡ªè¡Œè»Šè³‡è¨Š</th>
+                  <th width="80px">å‡ºå€Ÿæ•¸é‡</th>
               </tr>
               <tr align="center">
                   <td>01</td>
-                  <td id="bike01">²Q¤k¨®</td>
-                  <td><a data-role="button" id="picture01" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike01">æ·‘å¥³è»Š</td>
+                  <td><a data-role="button" id="picture01" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" id="quantity01" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list01" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list01" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
               </tr>
               <tr align="center">
                   <td>02</td>
-                  <td id="bike02">12¦T¥|½ü¥®µ£¨®</td>
-                  <td><a data-role="button" id="picture02" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike02">12å‹å››è¼ªå¹¼ç«¥è»Š</td>
+                  <td><a data-role="button" id="picture02" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" data-mini="true" id="quantity02" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list02" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list02" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
               </tr>
               <tr align="center">
                   <td>03</td>
-                  <td id="bike03">ÅÜ³t¤Ö¦~¨®</td>
-                  <td><a data-role="button" id="picture03" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike03">è®Šé€Ÿå°‘å¹´è»Š</td>
+                  <td><a data-role="button" id="picture03" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" data-mini="true" id="quantity03" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list03" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list03" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
               </tr>
               <tr align="center">
                   <td>04</td>
-                  <td id="bike04">ÅÜ³t°ª¯Åµn¤s¨®</td>
-                  <td><a data-role="button" id="picture04" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike04">è®Šé€Ÿé«˜ç´šç™»å±±è»Š</td>
+                  <td><a data-role="button" id="picture04" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" data-mini="true" id="quantity04" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list04" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list04" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
               </tr>
               <tr align="center">
                   <td>05</td>
-                  <td id="bike05">ÅÜ³t¦¨¤H¨ó¤O¨®</td>
-                  <td><a data-role="button" id="picture05" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike05">è®Šé€Ÿæˆäººå”åŠ›è»Š</td>
+                  <td><a data-role="button" id="picture05" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" data-mini="true" id="quantity05" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list05" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list05" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
               </tr>
               <tr align="center">
                   <td>06</td>
-                  <td id="bike06">ÅÜ³t¿Ë¤l¨®</td>
-                  <td><a data-role="button" id="picture06" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">¸ê°T</a></td>
+                  <td id="bike06">è®Šé€Ÿè¦ªå­è»Š</td>
+                  <td><a data-role="button" id="picture06" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">è³‡è¨Š</a></td>
                   <td><input type="text" data-mini="true" id="quantity06" class="quantity">
-                      <a data-role="button" data-mini="true" id="add_list06" class="ui-btn" style="width:30px;font-size:10px">¥[¤J</a>
+                      <a data-role="button" data-mini="true" id="add_list06" class="ui-btn" style="width:30px;font-size:10px">åŠ å…¥</a>
                   </td>
                 </tr>
             </table>
             <table align="center">
                 <tr>
-                    <td><a id="go_list" class="ui-btn">«e©¹¯²¨®²M³æ</a></td>
+                    <td><a id="go_list" class="ui-btn">å‰å¾€ç§Ÿè»Šæ¸…å–®</a></td>
                  </tr> 
             </table>
         </div>
         <div data-role="footer" data-position="fixed" data-theme="b">
             <h3> </h3>
-            <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-back" data-rel="back">ªğ¦^</a>
+            <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-back" data-rel="back">è¿”å›</a>
          </div>
-        <!--Popupµøµ¡-->
+        <!--Popupè¦–çª—-->
          <div data-role="popup" id="popupAddSuccess" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
-            <p>¥[¤J²M³æ¦¨¥\¡I<p>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
+            <p>åŠ å…¥æ¸…å–®æˆåŠŸï¼<p>
          </div>
         <div data-role="popup" id="popupAddFall" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
-            <p>©|¥¼¿é¤J¼Æ¶q³á¡I<p>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
+            <p>å°šæœªè¼¸å…¥æ•¸é‡å–”ï¼<p>
          </div>
 
-        <!--BIKE°Ó«~µøµ¡01-->
+        <!--BIKEå•†å“è¦–çª—01-->
         <div data-role="popup" id="popupPicture01" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike01"></p>
             <img src="bike01.jpg" style="width:300px; height:150px">
          </div>
-        <!--BIKE°Ó«~µøµ¡02-->
+        <!--BIKEå•†å“è¦–çª—02-->
         <div data-role="popup" id="popupPicture02" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike02"></p>
             <img src="bike02.jpg" style="width:300px; height:150px">
          </div>
-        <!--BIKE°Ó«~µøµ¡03-->
+        <!--BIKEå•†å“è¦–çª—03-->
         <div data-role="popup" id="popupPicture03" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike03"></p>
             <img src="bike03.jpg" style="width:300px; height:150px">
          </div>
-        <!--BIKE°Ó«~µøµ¡04-->
+        <!--BIKEå•†å“è¦–çª—04-->
         <div data-role="popup" id="popupPicture04" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike04"></p>
             <img src="bike04.jpg" style="width:300px; height:150px">
          </div>
-        <!--BIKE°Ó«~µøµ¡05-->
+        <!--BIKEå•†å“è¦–çª—05-->
         <div data-role="popup" id="popupPicture05" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike05"></p>
             <img src="bike05.jpg" style="width:300px; height:150px">
          </div>
-        <!--BIKE°Ó«~µøµ¡06-->
+        <!--BIKEå•†å“è¦–çª—06-->
         <div data-role="popup" id="popupPicture06" class="ui-content" data-theme="b">
-            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Ãö³¬</a>
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">é—œé–‰</a>
             <p id="popupbike06"></p>
             <img src="bike06.jpg" style="width:300px; height:150px">
          </div>
     </div>
 
-            //¯²¨®²M³æ
+            //ç§Ÿè»Šæ¸…å–®
             <div id="PayPage" data-role="page" style="background-color: #FFFACD">
                 <div data-role="header" data-position="fixed" data-theme="b">
-                    <h3>¯²¨®²M³æ</h3>
+                    <h3>ç§Ÿè»Šæ¸…å–®</h3>
                 </div>
                 <div data-role="main" class="ui-content">
                 <div style="margin:-16px;">
@@ -311,27 +311,27 @@
                 </div>
                 <div>
                     <span id="p_name"></span>
-                    <p>±z¦n¡A±z©Ò¯²­Éªº¦Û¦æ¨®¦p¥H¤U²M³æ¡G</p>
+                    <p>æ‚¨å¥½ï¼Œæ‚¨æ‰€ç§Ÿå€Ÿçš„è‡ªè¡Œè»Šå¦‚ä»¥ä¸‹æ¸…å–®ï¼š</p>
                 </div>
                     <table>
                         <tr align="center">
-                            <th width="200px">¦Û¦æ¨®Ãş«¬</th>
-                            <th>¯²­É¼Æ¶q</th>
+                            <th width="200px">è‡ªè¡Œè»Šé¡å‹</th>
+                            <th>ç§Ÿå€Ÿæ•¸é‡</th>
                         </tr>
                         <tr>
                             <td id="order_bike" align="left"></td>
                              <td id="order_quantity" align="center"></td>
                          </tr>
                     </table>
-                <a id="ok" class="ui-btn" style="width:40px;">½T©w</a>
+                <a id="ok" class="ui-btn" style="width:40px;">ç¢ºå®š</a>
                 </div>
                 <div data-role="footer" data-position="fixed" data-theme="b">
                     <h3></h3>
                 </div>
-                <!--Popupµøµ¡-->
+                <!--Popupè¦–çª—-->
                 <div data-role="popup" id="popupOK" class="ui-content" data-theme="b">
-                    <p>±zªº¦Û¦æ¨®¯²­É¸ê®Æ¤w¶Ç°e¦¨¥\¡I<p>
-                    <a data-role="button" id="OkGoHome" data-theme="b">½T©w</a>
+                    <p>æ‚¨çš„è‡ªè¡Œè»Šç§Ÿå€Ÿè³‡æ–™å·²å‚³é€æˆåŠŸï¼<p>
+                    <a data-role="button" id="OkGoHome" data-theme="b">ç¢ºå®š</a>
                 </div>
             </div>
     </body>
