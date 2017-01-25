@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>index.html</title>
+        <meta charset="Big5">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var name="";
+            $(document).on("pageinit","#home",function(){   //Hone頁面
+                $('#GoStore').click(function(){
+                    name=$('#user_name').val();
+                    $('#p_name').text(name);
+                    $.mobile.changePage('#store');
+                });            
+            });
+            var Bike=[];
+            var Quantity=[];
+            $(document).on("pageinit","#store",function(){  //store頁面
+                //點選加入清單按鈕事件 
+                $('#add_list01').click(function(){
+                    if($('#quantity01').val()){         //檢查該TEXT輸入值是否空白
+                        Bike.push($('#bike01').html());
+                        Quantity.push($('#quantity01').val());                          
+                        $('#quantity01').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                $('#add_list02').click(function(){      //檢查該TEXT輸入值是否空白
+                    if($('#quantity02').val()){
+                        Bike.push($('#bike02').html());
+                        Quantity.push($('#quantity02').val());
+                        $('#quantity02').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                $('#add_list03').click(function(){      //檢查該TEXT輸入值是否空白
+                    if($('#quantity03').val()){
+                        Bike.push($('#bike03').html());
+                        Quantity.push($('#quantity03').val());
+                        $('#quantity03').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                $('#add_list04').click(function(){      //檢查該TEXT輸入值是否空白
+                    if($('#quantity04').val()){
+                        Bike.push($('#bike04').html());
+                        Quantity.push($('#quantity04').val());
+                        $('#quantity04').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                $('#add_list05').click(function(){      //檢查該TEXT輸入值是否空白
+                    if($('#quantity05').val()){
+                        Bike.push($('#bike05').html());
+                        Quantity.push($('#quantity05').val());
+                        $('#quantity05').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                $('#add_list06').click(function(){      //檢查該TEXT輸入值是否空白
+                    if($('#quantity06').val()){
+                        Bike.push($('#bike06').html());
+                        Quantity.push($('#quantity06').val());
+                        $('#quantity06').val('');
+                        $('#popupAddSuccess').popup('open');
+                    }
+                    else{
+                        $('#popupAddFall').popup('open');
+                    }
+                });
+                
+                //點選租借資訊按鈕事件
+                $('#picture01').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike01').html("類型："+date[0].bike+"<br>適合身高："+date[0].hight+"<br>租借價格："+date[0].price+"<br>");
+                    });
+                    $('#popupPicture01').popup('open');
+                });
+                $('#picture02').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike02').html("類型："+date[1].bike+"<br>適合身高："+date[1].hight+"<br>租借價格："+date[1].price+"<br>");
+                    });
+                    $('#popupPicture02').popup('open');
+                });
+                $('#picture03').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike03').html("類型："+date[2].bike+"<br>適合身高："+date[2].hight+"<br>租借價格："+date[2].price+"<br>");
+                    });
+                    $('#popupPicture03').popup('open');
+                });
+                $('#picture04').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike04').html("類型："+date[3].bike+"<br>適合身高："+date[3].hight+"<br>租借價格："+date[3].price+"<br>");
+                    });
+                    $('#popupPicture04').popup('open');
+                });
+                $('#picture05').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike05').html("類型："+date[4].bike+"<br>適合身高："+date[4].hight+"<br>租借價格："+date[4].price+"<br>");
+                    });
+                    $('#popupPicture05').popup('open');
+                });
+                $('#picture06').click(function(){
+                    $.getJSON("newjson.json",function(date){
+                        $('#popupbike06').html("類型："+date[5].bike+"<br>適合身高："+date[5].hight+"<br>租借價格："+date[5].price+"<br>");
+                    });
+                    $('#popupPicture06').popup('open');
+                });
+                $('#go_list').click(function(){                  
+                    $.mobile.changePage('#PayPage');
+                });
+            });
+            $(document).on("pageinit","#PayPage",function(){        //PayPage頁面
+                for(var i=0;i<Bike.length;i++){
+                    $('#order_bike').append(Bike[i]+"</br>");
+                }
+                for(var i=0;i<Quantity.length;i++){
+                    $('#order_quantity').append(Quantity[i]+"</br>");
+                }
+                $('#ok').click(function(){
+                    $('#popupOK').popup('open');
+                });
+                $('#OkGoHome').click(function(){
+                    parent.window.location.reload();
+                    $.mobile.changePage('#home');
+                });              
+            });
+        </script>
+    //首頁
+    <div id="home" data-role="page">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <h3>自行車出租</h3>
+        <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
+      </div>
+      <div id="left-menu" data-role="panel" data-position="left" data-theme="b">
+        <a class="ui-btn" data-theme="b" href="#store">出租商店</a>
+        <a class="ui-btn" data-theme="b">關於我們</a>
+      </div>
+        <div data-role="main" class="ui-content">
+            <div style="margin:-16px;">
+                <img src="bike_thema.jpg" style="width:100%">
+            </div>
+            <p>姓名：</p>
+            <input type="text" data-mini="true" id="user_name">
+            <p>連絡電話：</p>
+            <input type="text" data-mini="true" id="user_celephone">
+            <table align="center">
+                <tr>
+                    <th><a data-role="button" data-mini="true" id="GoStore" class="ui-btn" style="width:60px; font-size:13px ">開始選擇</a></th>
+                </tr>
+            </table>
+        </div>
+      <div data-role="footer" data-position="fixed" data-theme="b">
+        <h3></h3>
+      </div>
+    </div>
+
+    //租車商店頁面
+    <div id="store" data-role="page" style="background-color: #FFFACD">
+      <div data-role="header" data-position="fixed" data-theme="b">
+        <h3>自行車款式</h3>
+      </div>
+      <div data-role="main" class="ui-content">
+          <div style="margin:-16px;">
+                <img src="bike_thema.jpg" style="width:100%"></br></br>
+          </div>
+          <table align="center" border="1">
+              <tr align="center">
+                  <th>編號</th>
+                  <th>名稱</th>
+                  <th>自行車資訊</th>
+                  <th width="80px">出借數量</th>
+              </tr>
+              <tr align="center">
+                  <td>01</td>
+                  <td id="bike01">淑女車</td>
+                  <td><a data-role="button" id="picture01" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" id="quantity01" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list01" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+              </tr>
+              <tr align="center">
+                  <td>02</td>
+                  <td id="bike02">12吋四輪幼童車</td>
+                  <td><a data-role="button" id="picture02" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" data-mini="true" id="quantity02" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list02" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+              </tr>
+              <tr align="center">
+                  <td>03</td>
+                  <td id="bike03">變速少年車</td>
+                  <td><a data-role="button" id="picture03" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" data-mini="true" id="quantity03" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list03" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+              </tr>
+              <tr align="center">
+                  <td>04</td>
+                  <td id="bike04">變速高級登山車</td>
+                  <td><a data-role="button" id="picture04" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" data-mini="true" id="quantity04" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list04" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+              </tr>
+              <tr align="center">
+                  <td>05</td>
+                  <td id="bike05">變速成人協力車</td>
+                  <td><a data-role="button" id="picture05" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" data-mini="true" id="quantity05" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list05" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+              </tr>
+              <tr align="center">
+                  <td>06</td>
+                  <td id="bike06">變速親子車</td>
+                  <td><a data-role="button" id="picture06" class="ui-btn ui-btn-icon-left ui-icon-eye" style="width:60px;font-size:10px">資訊</a></td>
+                  <td><input type="text" data-mini="true" id="quantity06" class="quantity">
+                      <a data-role="button" data-mini="true" id="add_list06" class="ui-btn" style="width:30px;font-size:10px">加入</a>
+                  </td>
+                </tr>
+            </table>
+            <table align="center">
+                <tr>
+                    <td><a id="go_list" class="ui-btn">前往租車清單</a></td>
+                 </tr> 
+            </table>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h3> </h3>
+            <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-back" data-rel="back">返回</a>
+         </div>
+        <!--Popup視窗-->
+         <div data-role="popup" id="popupAddSuccess" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p>加入清單成功！<p>
+         </div>
+        <div data-role="popup" id="popupAddFall" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p>尚未輸入數量喔！<p>
+         </div>
+
+        <!--BIKE商品視窗01-->
+        <div data-role="popup" id="popupPicture01" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike01"></p>
+            <img src="bike01.jpg" style="width:300px; height:150px">
+         </div>
+        <!--BIKE商品視窗02-->
+        <div data-role="popup" id="popupPicture02" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike02"></p>
+            <img src="bike02.jpg" style="width:300px; height:150px">
+         </div>
+        <!--BIKE商品視窗03-->
+        <div data-role="popup" id="popupPicture03" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike03"></p>
+            <img src="bike03.jpg" style="width:300px; height:150px">
+         </div>
+        <!--BIKE商品視窗04-->
+        <div data-role="popup" id="popupPicture04" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike04"></p>
+            <img src="bike04.jpg" style="width:300px; height:150px">
+         </div>
+        <!--BIKE商品視窗05-->
+        <div data-role="popup" id="popupPicture05" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike05"></p>
+            <img src="bike05.jpg" style="width:300px; height:150px">
+         </div>
+        <!--BIKE商品視窗06-->
+        <div data-role="popup" id="popupPicture06" class="ui-content" data-theme="b">
+            <a data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">關閉</a>
+            <p id="popupbike06"></p>
+            <img src="bike06.jpg" style="width:300px; height:150px">
+         </div>
+    </div>
+
+            //租車清單
+            <div id="PayPage" data-role="page" style="background-color: #FFFACD">
+                <div data-role="header" data-position="fixed" data-theme="b">
+                    <h3>租車清單</h3>
+                </div>
+                <div data-role="main" class="ui-content">
+                <div style="margin:-16px;">
+                    <img src="bike_thema.jpg" style="width:100%"></br></br>
+                </div>
+                <div>
+                    <span id="p_name"></span>
+                    <p>您好，您所租借的自行車如以下清單：</p>
+                </div>
+                    <table>
+                        <tr align="center">
+                            <th width="200px">自行車類型</th>
+                            <th>租借數量</th>
+                        </tr>
+                        <tr>
+                            <td id="order_bike" align="left"></td>
+                             <td id="order_quantity" align="center"></td>
+                         </tr>
+                    </table>
+                <a id="ok" class="ui-btn" style="width:40px;">確定</a>
+                </div>
+                <div data-role="footer" data-position="fixed" data-theme="b">
+                    <h3></h3>
+                </div>
+                <!--Popup視窗-->
+                <div data-role="popup" id="popupOK" class="ui-content" data-theme="b">
+                    <p>您的自行車租借資料已傳送成功！<p>
+                    <a data-role="button" id="OkGoHome" data-theme="b">確定</a>
+                </div>
+            </div>
+    </body>
+</html>

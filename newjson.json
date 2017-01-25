@@ -1,0 +1,10 @@
+[
+    {"number":"01","bike":"淑女車","hight":"150~165cm","price":"15元/1小時","quantity":10},
+    {"number":"02","bike":"12吋四輪幼童車","hight":"90~115cm","price":"15元/1小時","quantity":10},
+    {"number":"03","bike":"變速少年車","hight":"130~155cm","price":"40元/1小時","quantity":10},
+    {"number":"04","bike":"變速高級登山車","hight":"155~175cm","price":"60元/1小時","quantity":10},
+    {"number":"05","bike":"變速成人協力車","hight":"160~175cm","price":"60元/1小時","quantity":10},
+    {"number":"06","bike":"變速親子車","hight":"兒童90cm以下/成人155~170cm","price":"50元/1小時","quantity":10}
+]
+
+
